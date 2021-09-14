@@ -107,7 +107,7 @@
   </div>
     <div>
     <div class="col-md-11" style=" margin-top: 15px;">
-      <input type="text" id="fetch" class="form-control" placeholder="Give The Patinet Ordinal Position" style="margin-left: 30px;"/>
+      <input type="text" id="fetch" class="form-control" placeholder="Give The Patinet Name" style="margin-left: 30px;"/>
       <input type="button" value="Fetch Data " onclick="bar();" class="btn btn-success" id="butt" style="margin-left: 30px; margin-top: 15px;" >
     </div>
   </div>
@@ -931,119 +931,103 @@
     
     function bar(){
     
-    const bar = document.getElementById('fetch').value;
-    
-    const olo = bar.includes('1st');
-    if(olo==true)
-    editpres();
-    
-    const olo1 = bar.includes('2nd');
-    if(olo1==true)
-    editpres1();
-    
-    const olo2 = bar.includes('3rd');
-    if(olo2==true)
-    editpres2();
-    
-    const olo3 = bar.includes('4th');
-    if(olo3==true)
-    editpres3();
-    
-    const olo4 = bar.includes('5th');
-    if(olo4==true)
-    editpres4();
-    
-    const olo5 = bar.includes('6th');
-    if(olo5==true)
-    editpres5();
-    
-    const olo6 = bar.includes('7th');
-    if(olo6==true)
-    editpres6();
-    
-    const olo7 = bar.includes('8th');
-    if(olo7==true)
-    editpres7();
-    
-    const olo8 = bar.includes('9th');
-    if(olo8==true)
-    editpres8();
-    
-    const olo9 = bar.includes('10th');
-    if(olo9==true)
-    editpres9();
-    
-    const olo10 = bar.includes('11th');
-    if(olo10==true)
-    editpres10();
-    
-    const olo11 = bar.includes('12th');
-    if(olo11==true)
-    editpres11();
-    
-    const olo12 = bar.includes('13th');
-    if(olo12==true)
-    editpres12();
-    
-    const olo13 = bar.includes('14th');
-    if(olo13==true)
-    editpres13();
-    
-    const olo14 = bar.includes('15th');
-    if(olo14==true)
-    editpres14();
-    
-    const olo15 = bar.includes('16th');
-    if(olo15==true)
-    editpres15();
-    
-    const olo16 = bar.includes('17th');
-    if(olo16==true)
-    editpres16();
-    
-    const olo17 = bar.includes('18th');
-    if(olo17==true)
-    editpres17();
-    
-    const olo18 = bar.includes('19th');
-    if(olo18==true)
-    editpres18();
-    
-    const olo19 = bar.includes('20th');
-    if(olo19==true)
-    editpres19();
-    
-    const olo20 = bar.includes('21th');
-    if(olo20==true)
-    editpres20();
-    
-    const olo21 = bar.includes('22th');
-    if(olo21==true)
-    editpres21();
-    
-    const olo22 = bar.includes('23th');
-    if(olo22==true)
-    editpres22();
-    
-    const olo23 = bar.includes('24th');
-    if(olo23==true)
-    editpres23();
-    
-    const olo24 = bar.includes('25th');
-    if(olo24==true)
-    editpres24();
-    
-    const olo25 = bar.includes('26th');
-    if(olo25==true)
-    editpres25();
-    
-    const olo26 = bar.includes('27th');
-    if(olo26==true)
-    editpres26();
-    
-    const olo27 = bar.includes('28th');
-    if(olo27==true)
-    editpres27();
+    var data = document.getElementById('fetch').value;
+    var aha = JSON.parse(localStorage.getItem('books'));
+    var patient0 = aha[0].name;
+    var patient1 = aha[1].name;
+    var patient2 = aha[2].name;
+    var patient3 = aha[3].name;
+    var patient4 = aha[4].name;
+    var patient5 = aha[5].name;
+    var patient6 = aha[6].name;
+    var patient7 = aha[7].name;
+    var patient8 = aha[8].name;
+    var patient9 = aha[9].name;
+    var patient10= aha[10].name;
+    var patient11= aha[11].name;
+    var patient12= aha[12].name;
+    var patient13= aha[13].name;
+    var patient14= aha[14].name;
+    var patient15= aha[15].name;
+    var patient16= aha[16].name;
+    var patient17= aha[17].name;
+    var patient18= aha[18].name;
+    var patient19= aha[19].name;
+    var patient20= aha[20].name;
+    var patient21= aha[21].name;
+    var patient22= aha[22].name;
+    var patient23= aha[23].name;
+    var patient24= aha[24].name;
+    var patient25= aha[25].name;
+    var patient26= aha[26].name;
+    var patient27= aha[27].name;
+    var patient28= aha[28].name;
+
+
+    if(data = patient0){
+      editpres();
+    } else if(data = patient1){
+      editpres1();
+    }else if(data = patient2){
+      editpres2();
+    }
+    else if(data = patient3){
+      editpres3();
+    }
+    else if(data = patient4){
+      editpres4();
+    }
+    else if(data = patient5){
+      editpres5();
+    }
+    else if(data = patient6){
+      editpres6();
+    }
+    else if(data = patient7){
+      editpres7();
+    }
+    else if(data = patient8){
+      editpres8();
+    }
+    else if(data = patient9){
+      editpres9();
+    }
+    else if(data = patient10){
+      editpres10();
+    }
+    else if(data = patient11){
+      editpres11();
+    }
+    else if(data = patient12){
+      editpres12();
+    }
+    else if(data = patient13){
+      editpres13();
+    }
+    else if(data = patient14){
+      editpres14();
+    }
+    else if(data = patient15){
+      editpres15();
+    }
+    else if(data = patient16){
+      editpres16();
+    }
+    else if(data = patient17){
+      editpres17();
+    }
+    else if(data = patient18){
+      editpres18();
+    }
+    else if(data = patient19){
+      editpres19();
+    }
+    else if(data = patient20){
+      editpres20();
+    }
+    else if(data = patient21){
+      editpres21();
+    }
     
     }
 </script>
