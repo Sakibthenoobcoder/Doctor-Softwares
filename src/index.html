@@ -4,9 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
-    <script src="js/jquery-3.6.0.min.js"></script>
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css"> 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.3/jspdf.min.js"></script>
@@ -56,9 +54,22 @@
 </div>
 </div>
    
+<div class="col-md-5">
+  <select class="form-select" aria-label="Default select example" id="time" style="margin-left: 30px;">
+      <option selected>Choose...</option>       
+      <option value="">  রাতে খাবার আগে</option>
+      <option value="">  রাতে খাবার পরে</option>
+      <option value="">  দুপুরে খাবার আগে</option>
+      <option value="">  দুপুরে খাবার পরে</option>
+      <option value="">  সকালে খাবার আগে</option>
+      <option value="">  সকালে খাবার পরে</option>
+      <option value="">  তিন বেলা খাবার আগে</option>
+      <option value="">  তিন বেলা খাবার পরে</option>
+    </select>
+  </div>
 
-  <div class="col-md-5">
-    <select class="form-select" aria-label="Default select example" id="time" style="margin-left: 30px;">
+  <div class="col-md-5" id="mom">
+    <select class="form-select" aria-label="Default select example"  style="margin-left: 30px;">
         <option selected>Choose...</option>       
         <option value="">  রাতে খাবার আগে</option>
         <option value="">  রাতে খাবার পরে</option>
@@ -70,7 +81,7 @@
         <option value="">  তিন বেলা খাবার পরে</option>
       </select>
     </div>
-    <div class="col-md-6">
+    <div class="col-md-6" >
         <select class="form-select" aria-label="Default select example" id="duration" style="margin-left: 30px;">
           <option value="">  ১ দিন</option>
           <option value="">  ৩ দিন</option>
@@ -83,7 +94,16 @@
           <option value="">  চলবে</option>
         </select>
       </div>
+      <div>
+        <input type="text" id="eInput" onchange="dynamicSelect.saveOption(this.value),this.value=''">
+      </div>
+      <div>
+        <select id="elmSelect">
+          
+        </select>
+      </div>
     <div><input type="button" value="Add Medicine" onclick="newElement();" class="btn btn-success" id="butt" style="margin-left: 30px;">
+      
     </div>
 </div>
 
@@ -1016,13 +1036,46 @@ function bar(){
 
     }
     
-    var arrName = ['Alatrol', 'Deslor', 'Omidon', 'Penvick'];
+    window.onload = () => {
 
-localStorage.setItem('meds', JSON.stringify(arrName));
+dynamicSelect.loadOptions();
+}
 
-const medicines = JSON.parse(localStorage.getItem('meds'));
+const dynamicSelect = {
+targetSelect: document.getElementById('elmSelect'),
+dataSource: {
+    add: (value) => {
+        let dynamicSelectData = localStorage.getItem('dynamicSelectData') ? localStorage.getItem('dynamicSelectData').split(',') : [];
+        dynamicSelectData.push(value);
+        localStorage.setItem('dynamicSelectData', dynamicSelectData.join());
+    },
+    get: () => {
+        return localStorage.getItem('dynamicSelectData').split(',');
+    }
+},
+saveOption(inputValue) {
+    console.log('Saving new input value to data source...');
+    this.dataSource.add(inputValue);
+    console.log('Create new option from this incoming input value....');
+    this.createOption(inputValue);
+},
+createOption(optionValue) {
+    console.log('Create new option from optionValue');
+    let newOptionElement = document.createElement('option');
+    newOptionElement.text = optionValue;
+    newOptionElement.value = optionValue;
+    this.targetSelect.appendChild(newOptionElement);
+},
+loadOptions() {
+    console.log('Loading options from data source into target select...');
+    this.dataSource.get().forEach(item => {
+        this.createOption(item);
+    });
+}
+}
 
-console.log(medicines[0])
+
+
 
 </script>
 </html>
