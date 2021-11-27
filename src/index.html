@@ -21,23 +21,23 @@
 
 <form class="row g-3" id="book-form">
   <div class="col-md-5" >
-     <input type="text" id="name" class="form-control" required  placeholder="Give The Patient Name" style="margin-left: 30px; margin-top: 10px;"/>
+     <input type="text" name="name" id="name" class="form-control" required  placeholder="Give The Patient Name" style="margin-left: 30px; margin-top: 10px;"/>
 </div>
 
 <div class="col-md-6">
-     <input type="number" id="age" class="form-control " required  placeholder="Give The Patient Age" style="margin-left: 30px; margin-top: 10px;"/>
+     <input type="number" name="age" id="age" class="form-control " required  placeholder="Give The Patient Age" style="margin-left: 30px; margin-top: 10px;"/>
 </div>
 
 <div class="col-md-5">
-     <input type="text" id="sex" class="form-control " required  placeholder="Give The patient sex" style="margin-left: 30px;"/>
+     <input type="text" id="sex" name="sex" class="form-control " required  placeholder="Give The patient sex" style="margin-left: 30px;"/>
 </div>
 
 <div class="col-md-6">
-     <input type="date" id="date" class="form-control " required  placeholder="Give The Vist Date" style="margin-left: 30px;"/>
+     <input type="date" id="date" id="name" class="form-control " required  placeholder="Give The Vist Date" style="margin-left: 30px;"/>
 </div>
 
 <div class="col-md-11">
-     <input type="text" id="disease" class="form-control" required placeholder="Give The Cheif Complain" style="margin-left: 30px;"/>
+     <input type="text" id="disease" name="disease" class="form-control" required placeholder="Give The Cheif Complain" style="margin-left: 30px;"/>
 </div>
 
 <div>
@@ -54,12 +54,12 @@
 
 <div>
   <div class="col-md-11">
-  <input type="text" id="Medicine" class="form-control" placeholder="Give The Meidicne" style="margin-left: 30px;"/>
+  <input type="text" id="Medicine" name="Medicine" class="form-control" placeholder="Give The Meidicne" style="margin-left: 30px;"/>
 </div>
 </div>
    
 <div class="col-md-5">
-  <select class="form-select" aria-label="Default select example" id="time" style="margin-left: 30px;">
+  <select class="form-select" aria-label="Default select example" name="time" id="time" style="margin-left: 30px;">
       <option selected>Choose...</option>       
       <option value="">  রাতে খাবার আগে</option>
       <option value="">  রাতে খাবার পরে</option>
@@ -73,7 +73,7 @@
   </div>
 
   <div class="col-md-5" id="mom">
-    <select class="form-select" aria-label="Default select example"  style="margin-left: 30px;">
+    <select class="form-select" name="time" aria-label="Default select example"  style="margin-left: 30px;">
         <option selected>Choose...</option>       
         <option value="">  রাতে খাবার আগে</option>
         <option value="">  রাতে খাবার পরে</option>
@@ -86,7 +86,7 @@
       </select>
     </div>
     <div class="col-md-6" >
-        <select class="form-select" aria-label="Default select example" id="duration" style="margin-left: 30px;">
+        <select class="form-select" aria-label="Default select example" id="duration"  name="duration" style="margin-left: 30px;">
           <option value="">  ১ দিন</option>
           <option value="">  ৩ দিন</option>
           <option value="">  ৫ দিন</option>
@@ -113,7 +113,7 @@
 
 <div>
   <div class="col-md-11">
-  <input  id="test" class="form-control" placeholder="Give The Test" style="margin-left: 30px;"/>
+  <input  id="test" name="test" class="form-control" placeholder="Give The Test" style="margin-left: 30px;"/>
   </div>
 </div>
 
